@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="
+    width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="style.css" rel="stylesheet" />
+    <title>Sales Tax Calculator</title>
+  </head>
+  <body>
+    <div class="heading">Sales Tax Calculator</div>
+    <div class="container">
+      <div id="data">
+        <select id="itemType" placeholder="Enter Item Type">
+          <option value="">Select your option</option>
+          <option value="Books">Books</option>
+          <option value="Medicine">Medicine</option>
+          <option value="Food">Food</option>
+          <option value="Imported">Imported Items</option>
+          <option value="Others">Others</option>
+        </select>
+
+        <input
+          type="text"
+          id="itemName"
+          placeholder=" Enter Item Name"
+          required
+        />
+        <input
+          type="number"
+          id="price"
+          placeholder="Enter Item Price"
+          required
+        />
+        <input
+          type="number"
+          id="quantity"
+          placeholder="Enter Item Quantity"
+          required
+        />
+
+        <button id="Add">Add</button>
+      </div>
+      <table>
+        <tr>
+          <th>Item Type</th>
+          <th>Item Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total Cost</th>
+        </tr>
+      </table>
+    </div>
+    <div class="cost">
+      <button id="salesTax">Sales Tax</button>
+      <span id="salesTaxItems"></span>
+
+      <button id="totalCost">Total Cost</button>
+      <span id="totalItemsCost"></span>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
