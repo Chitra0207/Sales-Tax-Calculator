@@ -1,7 +1,5 @@
 let btnAdd = document.querySelector("#Add");
 let table = document.querySelector("table");
-let btnTotalCost = document.querySelector("#totalCost");
-let salesTaxbtn = document.querySelector("#salesTax");
 let itemType = document.querySelector("#itemType");
 let itemName = document.querySelector("#itemName");
 let price = document.querySelector("#price");
@@ -53,22 +51,16 @@ const display = function () {
   table.innerHTML += template;
   item.push(Icost);
   tax.push(salesTax);
+  totalItemsCost.textContent = calc(item);
+  salesTaxItems.textContent = calc(tax);
 };
 
-console.log(tax);
 btnAdd.addEventListener("click", display);
 
-btnTotalCost.addEventListener("click", () => {
+const calc = function (arr) {
   let sum = 0;
-  for (let i = 0; i < item.length; i++) {
-    sum = sum + item[i];
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
   }
-  totalItemsCost.textContent = sum.toFixed(2);
-});
-salesTaxbtn.addEventListener("click", () => {
-  let sum = 0;
-  for (let i = 0; i < tax.length; i++) {
-    sum = sum + tax[i];
-  }
-  salesTaxItems.textContent = sum.toFixed(2);
-});
+  return sum.toFixed(2);
+};
